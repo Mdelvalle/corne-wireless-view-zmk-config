@@ -76,10 +76,13 @@
             >;
         };
 
-        tri_layer {
-            compatible = "zmk,tri-layer";
-            layers = <1 2 3>; // lower + raise = bt_layer
-        };
+	conditional_layers {
+		compatible = "zmk,conditional-layers";
+		tri_layer {
+			if-layers = <1 2>;
+			then-layer = <3>;
+		};
+	};
 
         extra_1 { status = "reserved"; };
 
